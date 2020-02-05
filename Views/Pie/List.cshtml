@@ -10,7 +10,7 @@
                 <div class="card-body">
                     <h4 class="float-right">@pie.Price.ToString("c")</h4>
                     <h4>  
-                        <a>@pie.Name</a>
+                        <a asp-controller="pie" asp-action="Details" asp-route-id="@pie.PieId">@pie.Name</a>
                     </h4>
                     <p class="card-text">@pie.ShortDescription</p>
                 </div>
