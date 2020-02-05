@@ -8,7 +8,7 @@ namespace BethanysPieShop.Models
 {
     public class PieRepository: IPieRepository
     {
-        public readonly AppDbContext _appDbContext;
+        private readonly AppDbContext _appDbContext;
 
         public PieRepository(AppDbContext appDbContext)
         {
@@ -23,11 +23,18 @@ namespace BethanysPieShop.Models
             }
         }
 
-        public IEnumerable<Pie> PiesOfTheWeek => throw new NotImplementedException();
+        public IEnumerable<Pie> PiesOfTheWeek
+        {
+            get
+            {
+                return _appDbContext.Pies.Include(c => c.Category).Where(p => p.IsPieOfTheWeek);
+            }
+   
+        }
 
         public Pie GetPieById(int pieId)
         {
-            throw new NotImplementedException();
+                 return _appDbContext.Pies.FirstOrDefault(p => p.PieId == pieId);
         }
     }
 }
