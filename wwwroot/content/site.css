@@ -20,7 +20,8 @@ body {
     margin-bottom: 30px;
 }
 
-.carousel-control,
+.carousel-control-prev,
+.carousel-control-next,
 .item {
     border-radius: 4px;
 }
@@ -70,13 +71,13 @@ footer {
     font-size: 1.2em;
 }
 
-.navbar .nav > li > a {
+nav-link {
     font-size: 1.2em;
     text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
     color: white;
 }
 
-.carousel .item {
+.carousel-item {
     height: 400px;
 }
 

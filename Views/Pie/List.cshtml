@@ -4,17 +4,6 @@
 <div class="row">
     @foreach (var pie in Model.Pies)
     {
-        <div class="col-sm-4 col-lg-4 col-md-4 mb-4">
-            <div class="card">
-                <img src="@pie.ImageThumbnailUrl" class="card-img-top" alt="" />
-                <div class="card-body">
-                    <h4 class="float-right">@pie.Price.ToString("c")</h4>
-                    <h4>  
-                        <a asp-controller="pie" asp-action="Details" asp-route-id="@pie.PieId">@pie.Name</a>
-                    </h4>
-                    <p class="card-text">@pie.ShortDescription</p>
-                </div>
-            </div>
-        </div>
+        <partial name="_PieCard" model="pie" />
     }
 </div>
